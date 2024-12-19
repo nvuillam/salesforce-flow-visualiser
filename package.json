@@ -1,6 +1,6 @@
 {
   "name": "salesforce-flow-visualiser",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Parse Salesforce Flow meta.xml to text-based graphical formats",
   "main": "dist/index.js",
   "module": "./dist/index.mjs",
@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "build": "tsup",
-    "test": "jest"
+    "test": "jest",
+    "prepack": "npm run build"
   },
   "keywords": [
     "Salesforce",

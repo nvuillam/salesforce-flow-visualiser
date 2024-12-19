@@ -245,7 +245,9 @@ function getMermaidBody(flowMap :FlowMap): Promise<string> {
                 case 'decisions':
                     // rules
                     for (const rule of node.rules ) {
-                        bodyStr += node.name + " --> |" + rule.label + "| " + (rule.nextNode?.targetReference || "Unknown (no targetReference") + "\n";
+                        if (rule.nextNode?.targetReference) {
+                            bodyStr += node.name + " --> |" + rule.label + "| " + rule.nextNode.targetReference + "\n";
+                        }
                     }
                     
                     // default
